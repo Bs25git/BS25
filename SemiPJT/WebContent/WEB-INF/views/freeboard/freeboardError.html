@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" type="image⁄x-icon" href="/img/logo.png">
+<meta charset="UTF-8">
+<title>To:geDog - 자유게시판 - 에러</title>
+    
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>   
+</head>
+<style>
+    div {
+        font-family: 맑은고딕;
+    }
+    
+    #contents {
+        width: 900px;
+        height: 500px;
+        margin: 0 auto;
+        position: relative;
+        bottom: 35px;
+    }
+    
+    #legendtitle {
+        text-align: left; 
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+</style>
+<body>
+    <div id="header"></div>
+    <div id="nav"></div>
+    <div id="contents">
+        <p style="text-align: right; font-size: 13px;"></p>
+        <form action="#" method="post">
+            <legend id="legendtitle">서비스 요청이 실패하였습니다.</legend><br>
+            <hr>
+
+        </form>
+    </div>
+    <hr>
+    <div id="footer"></div>
+</body>
+<script type="text/javascript"> /* include */
+      $(document).ready(function(){
+         $("#header").load("include/header.html") 
+          $("#nav").load("include/nav.html")
+          $("#footer").load("include/footer.html")
+      });
+</script> 
+</html>

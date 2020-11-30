@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="shortcut icon" type="image⁄x-icon" href="/img/logo.png">
+    <meta charset="UTF-8">
+    <title>To:geDog - 후원하기</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    div {
+        font-family: 맑은고딕;
+    }
+
+    #contents {
+        width:1200px;
+        height: 850px;
+        margin: 0 auto;
+        position: relative;
+        bottom: 35px;
+    }
+
+    #legendtitle {
+        text-align: left;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    #wrapper {
+        width: 1890px;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    #supporttitle1 {
+        font-size: 23px;
+        font-weight: 1000;
+        position: relative;
+        bottom: 10px;
+    }
+
+    #supportcontent1 {
+        width: 65%;
+        float: left;
+        position: relative;
+        left: 60px;
+    }
+
+    #supportcontent2 {
+        float: left;
+        width: 50%;
+    }
+
+    #supportimg1 {
+        width: 30%;
+        float: right;
+        position: relative;
+        left: 50px;
+    }
+
+    #supporttitle2 {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    #supportimg2 {
+        width: 90px;
+        height: 40px;
+        position: relative;
+        left: 122px;
+    }
+
+    #supportimg3 {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        left: 150px;
+    }
+
+    #supportcontentdetail1 {
+        position: relative;
+        left: 159px;
+    }
+
+    #supportcontentdetail2 {
+        position: relative;
+        left: 80px;
+        font-size: 13px;
+        color: red;
+    }
+
+    #support {
+        width: 150px;
+        height: 45px;
+        background-color: black;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        position: relative;
+        left: 225px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div id="wrapper">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="contents">
+            <p style="text-align: right; font-size: 13px;">홈 > 후원하기</p>
+            <form action="/views/cs/supportPay.html" method="post">
+                <legend id="legendtitle">후원하기</legend><br>
+                <hr>
+                <div id="supportcontent1">
+                    <p id="supporttitle1">여러분의 후원으로 한 생명을 살릴 수 있습니다.</p>
+                    <p>한 해 주인한테 버림받는 반려동물이 10만 마리를 넘어서고 있습니다. 또 버림받는 동물 다섯 마리 가운데 <br>한 마리는 안락사하는 것으로 알려지고 있습니다. 무분별하게 버려지는 동물을 지키기 위해서는 당신의 <br>도움이 필요합니다.</p>
+                    <p>To:geDog 판매수익의 10%를 이렇게 버림받은 동물들을 지키기 위해 사용하고 있습니다.</p>
+                    <p>대충 기부 좀 부탁한다는 내용</p>
+                </div>
+                <div id="supportimg1">
+                    <img src="/img/%EA%B0%9C%ED%95%B4%EB%A7%91.jpg">
+                </div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <div>
+                    <div id="supportcontent2">
+                        <img id="supportimg2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlF5ESO3zodrc2Ns-0O5z-yJ2_HSPWF-JNrQ&usqp=CAU">
+                        <span id="supporttitle2" style="position: relative; left: 97px;">정기 후원</span>
+                        <hr style="width: 300px;">
+                        <p id="supportcontentdetail1">To:geDog이 안정적으로 활동 할 수 있도록<br>매달 보내주는 정기 후원 입니다.</p>
+                        <input id="support" type="submit" value="정기 후원 신청">
+                    </div>
+                    <div id="supportcontent2">
+                        <img id="supportimg3" src="https://cdn.onlinewebfonts.com/svg/img_214830.png">
+                        <span id="supporttitle2" style="position: relative; left: 153px;">일시 후원</span>
+                        <hr style="width: 300px;">
+                        <p id="supportcontentdetail1">신용카드, 계좌이체를 통하여 후원금을 <br>납부하시는 일시 후원 입니다.</p>
+                        <input id="support" type="submit" value="일시 후원 신청">
+                    </div>
+                </div>
+                <br><br><br><br><br><br><br><br><br><br>
+                <div>
+                    <p id="supporttitle2" style="position: relative; left: 223px; top: 10px;">후원 계좌</p>
+                    <hr style="width: 753px;">
+                    <p id="supportcontentdetail2" style="position: relative; left: 223px;">후원금 사용 내역은 매달 초<br>게시판에 공지됩니다.</p>
+                    <p style="text-align: center; font-weight: 600; font-size: 20px;">국민 523202 - 04 - 030162 ( 예금주 : 김수연 )</p>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div id="footer"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    /* include */
+    $(document).ready(function() {
+        $("#header").load("/include/headerWeb.jsp")
+        $("#nav").load("/include/navWeb.jsp")
+        $("#footer").load("/include/footerWeb.html")
+    });
+</script></html>
