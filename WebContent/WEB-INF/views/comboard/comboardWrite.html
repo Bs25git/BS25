@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image⁄x-icon" href="/img/logo.png">
+
+<title>To:geDog - 정보공유 - 작성</title>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<style>
+div {
+	font-family: 맑은고딕;
+}
+
+#wrapper {
+	width: 1890px;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+#contents {
+	width: 1200px;
+	height: 650px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	bottom: 35px;
+}
+
+#legendtitle {
+	text-align: left;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#boardTitle, #boardContent {
+	text-align: left;
+	position: relative;
+	left: 158px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#btnWrite {
+	width: 140px;
+	height: 40px;
+	background-color: black;
+	color: white;
+	font-size: 15px;
+	font-weight: 1000;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border: none;
+	margin-right: 30px;
+}
+
+#btnList {
+	width: 140px;
+	height: 40px;
+	background-color: darkgray;
+	color: black;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border: none;
+	margin-left: 30px;
+}
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header"></div>
+		<div id="nav"></div>
+		<div id="contents">
+			<p style="text-align: right; font-size: 13px;">홈 > 정보공유 게시판 > 게시글
+				작성</p>
+			<form action="/comboard/write" method="post">
+				<legend id="legendtitle">게시글 작성</legend>
+				<br>
+				<hr>
+				<br>
+				<p id="boardTitle">제목</p>
+				<input type="text" size="108" placeholder="제목을 작성하세요"
+					style="border: 1px solid black; height: 25px; font-size: 15px;" name="comSubject"><br>
+				<br>
+				<p id="boardContent">내용</p>
+				<textarea rows="20" cols="110" placeholder="내용을 작성하세요"
+					style="font-size: 15px;" name="comContents"></textarea>
+				<br>
+				<br> <input type="submit" value="완료" id="btnWrite"> <input
+					type="reset" value="취소" id="btnList"
+					onclick="javascript:history.back();">
+			</form>
+		</div>
+		<br>
+		<br><br>
+		<br>
+		<hr>
+		<div id="footer"></div>
+
+		<script type="text/javascript">
+    /* include */
+    $(document).ready(function() {
+				$("#header").load("/include/headerWeb.jsp")
+				$("#nav").load("/include/navWeb.jsp")
+				$("#footer").load("/include/footerWeb.html")
+			});
+</script>
+	</div>
+</body>
+</html>

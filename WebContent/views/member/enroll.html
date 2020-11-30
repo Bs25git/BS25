@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="shortcut icon" type="image⁄x-icon" href="/img/logo.png">
+    <meta charset="UTF-8">
+    <title>To:geDog - 회원가입</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+<style>
+    div {
+        font-family: 맑은고딕;
+    }
+
+    #contents {
+        width: 900px;
+        height: 1450px;
+        margin: 0 auto;
+        position: relative;
+        bottom: 35px;
+    }
+
+    #legendtitle {
+        text-align: left;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    ul,
+    li {
+        margin: 15px 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    
+    #agreementmargin {
+        margin: 15px 0px;
+        padding: 0px;
+    }
+
+    #inputbox,
+    #postCode {
+        border: 1px solid black;
+        width: 185px;
+        height: 25px;
+    }
+
+    #roadAddr,
+    #detailAddr {
+        border: 1px solid black;
+        width: 291px;
+        height: 25px;
+    }
+
+    #addrSearchBtn {
+        width: 100px;
+        height: 30px;
+        background-color: black;
+        color: white;
+        font-size: 14px;
+        font-weight: 1000;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        cursor: pointer;
+    }
+
+    #btnEnroll {
+        width: 200px;
+        height: 50px;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        cursor: pointer;
+    }
+    
+</style>
+
+<body>
+    <div id="header"></div>
+    <div id="nav"></div>
+    <div id="contents">
+        <p style="text-align: right; font-size: 13px;">홈 > 회원가입</p>
+        <form action="/member/enroll" method="get" id="form1">
+            <legend id="legendtitle">회원가입</legend>
+            <br><hr>
+                <ul>
+                    <li>&nbsp;아이디<input type="text" name="userId" id="inputbox" style="position: relative; left: 94px"><snap style="font-size: 13px; position: relative; left: 110px;">(영문 소문자 / 숫자)</snap></li>
+                    <hr>
+                    <li>&nbsp;비밀번호<input type="password" name="userPwd" id="inputbox" style="position: relative; left: 78px"><snap style="font-size: 13px; position: relative; left: 94px;">(영문 소문자 / 숫자 / 특수문자 중 2가지 이상 조합, 4~10자)</snap></li>
+                    <hr>
+                    <li>&nbsp;비밀번호 확인<input type="password" name="userPwdC" id="inputbox" style="position: relative; left: 40px"></li>
+                    <hr>
+                    <li>&nbsp;이름<input type="text" value="" name="name" id="inputbox" style="position: relative; left: 110px"></li>
+                    <hr>
+                    <li>&nbsp;폰번호<input type="phone" name="phone" id="inputbox" style="position: relative; left: 94px" placeholder="000-0000-0000"></li>
+                    <hr>
+                    <li>&nbsp;이메일<input type="email" name="email" id="inputbox" style="position: relative; left: 94px"></li>
+                    <hr>
+                    <li>&nbsp;주소<input type="text" id="postCode" name="zipcode" style="position: relative; left: 110px" readonly>
+                    <button id="addrSearchBtn" style="position: relative; left: 110px">주소검색</button></li>
+                    
+                    <li><input type="text" id="roadAddr" style="position: relative; left: 147px" name="address"></li>
+                    <li><input type="text" id="detailAddr" style="position: relative; left: 147px" placeholder="상세주소"></li>
+                    
+                    <hr>
+                </ul>
+            <br><br><br>
+            <legend id="legendtitle">약관동의</legend>
+            <br><hr>
+            <div id="agreementmargin">
+                <tr>
+                    <td><input type="checkbox" name="all" id="all"></td>
+                    <td align="left">
+                        <font size="3">이용약관 및 개인정보수집 및 이용, 정보 수신(선택)에 모두 동의합니다.</font>
+                    </td>     
+                </tr>
+                </div>
+                <hr />
+                <div id="accordion">
+                    <div id="agreementmargin">
+                    <a style="text-align: left; display: block;">
+                        <font size="3">[필수] 이용약관 동의</font>
+                    </a><br>
+                    <textarea readonly="readonly" rows="5" cols="66">대충 이용 약관의 동의하라는 내용
+   	</textarea>
+                    <a style="text-align: left; display: block;">
+                        <font size="2">이용약관에 동의하십니까? </font><input type="checkbox" name="c1" id="c1" />
+                    </a>
+                    </div>
+                    <hr>
+                    <div id="agreementmargin">
+                    <a style="text-align: left; display: block;">
+                        <font size="3">[필수] 개인정보 수집 및 이용 동의</font>
+                    </a><br>
+                    <textarea readonly="readonly" rows="5" cols="66">대충 개인정보 수집 및 이용의 동의하라는 내용
+   	</textarea>
+                    <a style="text-align: left; display: block;">
+                        <font size="2">개인정보 수집 및 이용에 동의하십니까? </font><input type="checkbox" name="c2" id="c2" />
+                    </a>
+                    </div>
+                    <hr>
+                    <div id="agreementmargin">
+                    <a style="text-align: left; display: block;">
+                        <font size="3">[선택] 정보 수신 동의</font>
+                    </a><br>
+                    <textarea readonly="readonly" rows="5" cols="66">대충 광고 날려서 귀찮게 하는거에 동의하라는 내용
+    </textarea>
+                    <a style="text-align: left; display: block;">
+                        <font size="2">SNS 수신을 동의하십니까? </font><input type="checkbox" name="c3" id="c3" />
+                    </a>
+                <tr>
+                    <td align="left">
+                        <font size="2">이메일 수신을 동의하십니까?</font>
+                    </td>
+                    <td><input type="checkbox" name="c4" id="c4"></td>
+                    
+                </tr>
+                    </div>
+                    </div>
+            <hr />
+                <div align="center">
+                    <input type="submit" id="btnEnroll" value="회원가입">
+                </div>
+        </form>
+    </div>
+    <hr>
+    <div id="footer"></div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        /* include */
+        $("#header").load("/include/headerWeb.jsp")
+        $("#nav").load("/include/navWeb.jsp")
+        $("#footer").load("/include/footerWeb.html")
+    });
+</script>
+<script>
+    $("#addrSearchBtn").click(function(e) {
+        /* 지도 API */
+        e.preventDefault();
+        new daum.Postcode({
+            oncomplete: function(data) {
+                $("#postCode").val(data.zonecode);
+                $("#roadAddr").val(data.address);
+                $("#jibunAddr").val(data.jibunAddress);
+            }
+        }).open();
+    });
+</script>
+<script>
+    var doc = document; /* 약관 동의 */
+    var form1 = doc.getElementById('form1');
+    var inputs = form1.getElementsByTagName('INPUT');
+    var form1_data = {
+        "c1": false, //전체 선택
+        "c2": false, //필수 선택 1
+        "c3": false //필수 선택 2
+    };
+
+    var c1 = doc.getElementById('c1');
+    var c2 = doc.getElementById('c2');
+    var c3 = doc.getElementById('c3');
+
+    function checkboxListener() {
+        form1_data[this.name] = this.checked; //각각 자신의 checkBox를 Checked 상태로 바꿈 
+    }
+    c1.onclick = c2.onclick = c3.onclick = checkboxListener; //c1, C2, C3를 checkBoxListenner를 호출하여                    //Checked로 바꿈
+    var all = doc.getElementById('all'); //전체 체크를 위한 체크박스 선언
+    all.onclick = function() { //전체 체크를 누를 시
+        if (this.checked) {
+            setCheckbox(form1_data, true); //form1_data(c1,c2,c3)의 값을 모두 Checked로 바꿈
+        } else {
+            setCheckbox(form1_data, false); ////form1_data(c1,c2,c3)의 값을 모두 no checked로 바꿈
+        }
+    };
+
+    function setCheckbox(obj, state) { //checkbox상태 변경하는 함수
+        for (var x in obj) {
+            obj[x] = state;
+
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    inputs[i].checked = state;
+                }
+            }
+
+        }
+    }
+    form1.onsubmit = function(e) {
+        e.preventDefault();
+
+        if (!form1_data['c1']) {
+            alert('이용 약관에 동의하지 않았습니다.');
+            return false;
+        }
+
+        if (!form1_data['c2']) {
+            alert('개인정보 수집 및 이용에 동의하지 않았습니다.');
+            return false;
+        }
+        alert('회원가입 성공');
+        this.submit();
+    };
+</script>
+<script>
+    $(function() {
+        $("#accordion").accordion();
+        $('#accordion input[type="checkbox"]').click(function(e) {
+            e.stopPropagation();
+        });
+    });
+</script>
+</html>
